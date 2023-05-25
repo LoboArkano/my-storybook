@@ -7,7 +7,8 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     size: { control: 'select' },
-    color: { control: 'select', options: ['primary', 'secondary', 'tertiary'] }
+    color: { control: 'select', options: ['primary', 'secondary', 'tertiary'] },
+    fontColor: { control: 'color' }
   }
 } as Meta<typeof MyLabel>
 
@@ -39,4 +40,11 @@ export const Tertiary = Template.bind({});
 Tertiary.args = {
   size: 'normal',
   color: 'tertiary'
+}
+
+export const CustomFontColor = Template.bind({});
+
+CustomFontColor.args = {
+  size: 'h1',
+  fontColor: '#5517ac'
 }
