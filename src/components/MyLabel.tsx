@@ -9,6 +9,14 @@ interface MyLabelProps {
    * Tamaño de la etiqueta
    */
   size: 'normal' | 'h1' | 'h2' | 'h3'
+  /**
+   * Color de la etiqueta
+   */
+  color: 'primary' | 'secondary' | 'tertiary'
+  /**
+   * Capitalizacion de la etiqueta
+   */
+  allCaps: boolean
 }
 
 /**
@@ -16,11 +24,17 @@ interface MyLabelProps {
  */
 export const MyLabel = ({
   label = 'No Label',
-  size = 'normal'
+  size = 'normal',
+  color = 'primary',
+  allCaps = true
 }: MyLabelProps) => {
   return (
-    <span className={`${ size }`}>
-      { label }
+    <span
+      className={
+        `${ size } ${ color ? `text-${color}` : 'text-primary' }`
+      }
+    >
+      { allCaps ? label.toUpperCase() : label }
     </span>
   )
 }
