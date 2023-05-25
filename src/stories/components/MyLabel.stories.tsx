@@ -3,7 +3,8 @@ import { MyLabel } from "../../components/MyLabel";
 
 export default {
   title: 'UI/MyLabel',
-  component: MyLabel
+  component: MyLabel,
+  tags: ['autodocs'],
 } as Meta<typeof MyLabel>
 
 const Template: StoryFn<typeof MyLabel> = (args) => <MyLabel { ...args } />
